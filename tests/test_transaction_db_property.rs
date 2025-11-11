@@ -16,7 +16,7 @@ mod util;
 
 use pretty_assertions::assert_eq;
 
-use rocksdb::{properties, Options, TransactionDB, TransactionDBOptions};
+use sfzhou_rocksdb::{properties, Options, TransactionDB, TransactionDBOptions};
 use util::DBPath;
 
 #[test]

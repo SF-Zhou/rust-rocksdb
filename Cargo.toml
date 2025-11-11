@@ -1,5 +1,5 @@
 [package]
-name = "rocksdb"
+name = "sfzhou-rocksdb"
 description = "Rust wrapper for Facebook's RocksDB embeddable database"
 version = "0.23.0"
 edition = "2021"
@@ -20,25 +20,25 @@ members = ["librocksdb-sys"]
 
 [features]
 default = ["snappy", "lz4", "zstd", "zlib", "bzip2", "bindgen-runtime"]
-jemalloc = ["librocksdb-sys/jemalloc"]
-io-uring = ["librocksdb-sys/io-uring"]
+jemalloc = ["sfzhou-librocksdb-sys/jemalloc"]
+io-uring = ["sfzhou-librocksdb-sys/io-uring"]
 valgrind = []
-mt_static = ["librocksdb-sys/mt_static"]
-snappy = ["librocksdb-sys/snappy"]
-lz4 = ["librocksdb-sys/lz4"]
-zstd = ["librocksdb-sys/zstd"]
-zlib = ["librocksdb-sys/zlib"]
-bzip2 = ["librocksdb-sys/bzip2"]
-rtti = ["librocksdb-sys/rtti"]
+mt_static = ["sfzhou-librocksdb-sys/mt_static"]
+snappy = ["sfzhou-librocksdb-sys/snappy"]
+lz4 = ["sfzhou-librocksdb-sys/lz4"]
+zstd = ["sfzhou-librocksdb-sys/zstd"]
+zlib = ["sfzhou-librocksdb-sys/zlib"]
+bzip2 = ["sfzhou-librocksdb-sys/bzip2"]
+rtti = ["sfzhou-librocksdb-sys/rtti"]
 multi-threaded-cf = []
 serde1 = ["serde"]
-bindgen-runtime = ["librocksdb-sys/bindgen-runtime"]
-bindgen-static = ["librocksdb-sys/bindgen-static"]
-lto = ["librocksdb-sys/lto"]
+bindgen-runtime = ["sfzhou-librocksdb-sys/bindgen-runtime"]
+bindgen-static = ["sfzhou-librocksdb-sys/bindgen-static"]
+lto = ["sfzhou-librocksdb-sys/lto"]
 
 [dependencies]
 libc = "0.2"
-librocksdb-sys = { path = "librocksdb-sys", version = "0.17.1", default-features = false, features = [
+sfzhou-librocksdb-sys = { path = "librocksdb-sys", version = "0.17.1", default-features = false, features = [
     "static",
 ] }
 serde = { version = "1", features = ["derive"], optional = true }

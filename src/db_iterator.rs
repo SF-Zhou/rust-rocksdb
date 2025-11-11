@@ -31,7 +31,7 @@ pub type DBRawIterator<'a> = DBRawIteratorWithThreadMode<'a, DB>;
 /// widely recognized Rust idioms.
 ///
 /// ```
-/// use rocksdb::{DB, Options};
+/// use sfzhou_rocksdb::{DB, Options};
 ///
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_rocksdb_storage4")
@@ -145,7 +145,7 @@ impl<'a, D: DBAccess> DBRawIteratorWithThreadMode<'a, D> {
     /// # Examples
     ///
     /// ```rust
-    /// use rocksdb::{DB, Options};
+    /// use sfzhou_rocksdb::{DB, Options};
     ///
     /// let tempdir = tempfile::Builder::new()
     ///     .prefix("_path_for_rocksdb_storage5")
@@ -186,7 +186,7 @@ impl<'a, D: DBAccess> DBRawIteratorWithThreadMode<'a, D> {
     /// # Examples
     ///
     /// ```rust
-    /// use rocksdb::{DB, Options};
+    /// use sfzhou_rocksdb::{DB, Options};
     ///
     /// let tempdir = tempfile::Builder::new()
     ///     .prefix("_path_for_rocksdb_storage6")
@@ -230,7 +230,7 @@ impl<'a, D: DBAccess> DBRawIteratorWithThreadMode<'a, D> {
     /// # Examples
     ///
     /// ```rust
-    /// use rocksdb::{DB, Options};
+    /// use sfzhou_rocksdb::{DB, Options};
     ///
     /// let tempdir = tempfile::Builder::new()
     ///     .prefix("_path_for_rocksdb_storage7")
@@ -273,7 +273,7 @@ impl<'a, D: DBAccess> DBRawIteratorWithThreadMode<'a, D> {
     /// # Examples
     ///
     /// ```rust
-    /// use rocksdb::{DB, Options};
+    /// use sfzhou_rocksdb::{DB, Options};
     ///
     /// let tempdir = tempfile::Builder::new()
     ///     .prefix("_path_for_rocksdb_storage8")
@@ -395,7 +395,7 @@ pub type DBIterator<'a> = DBIteratorWithThreadMode<'a, DB>;
 /// ranges and direction.
 ///
 /// ```
-/// use rocksdb::{DB, Direction, IteratorMode, Options};
+/// use sfzhou_rocksdb::{DB, Direction, IteratorMode, Options};
 ///
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_rocksdb_storage2")

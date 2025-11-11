@@ -25,7 +25,7 @@ pub type Snapshot<'a> = SnapshotWithThreadMode<'a, DB>;
 /// # Examples
 ///
 /// ```
-/// use rocksdb::{DB, IteratorMode, Options};
+/// use sfzhou_rocksdb::{DB, IteratorMode, Options};
 ///
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_rocksdb_storage3")

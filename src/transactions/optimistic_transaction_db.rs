@@ -41,7 +41,7 @@ use crate::{
 /// # Examples
 ///
 /// ```
-/// use rocksdb::{DB, Options, OptimisticTransactionDB, SingleThreaded};
+/// use sfzhou_rocksdb::{DB, Options, OptimisticTransactionDB, SingleThreaded};
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_optimistic_transaction_db")
 ///     .tempdir()

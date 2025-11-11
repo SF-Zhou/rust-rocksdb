@@ -16,8 +16,8 @@ mod util;
 
 use std::{fs, io::Read as _};
 
-use rocksdb::checkpoint::Checkpoint;
-use rocksdb::{
+use sfzhou_rocksdb::checkpoint::Checkpoint;
+use sfzhou_rocksdb::{
     BlockBasedOptions, Cache, DBCompressionType, DataBlockIndexType, Env, LruCacheOptions, Options,
     ReadOptions, DB,
 };

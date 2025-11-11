@@ -1,4 +1,4 @@
-use rocksdb::DB;
+use sfzhou_rocksdb::DB;
 
 fn main() {
     let _snapshot = {

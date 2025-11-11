@@ -56,7 +56,7 @@ type DefaultThreadMode = crate::MultiThreaded;
 /// if feature `multi-threaded-cf` is not enabled.
 ///
 /// ```
-/// use rocksdb::{DB, Options, TransactionDB, SingleThreaded};
+/// use sfzhou_rocksdb::{DB, Options, TransactionDB, SingleThreaded};
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_transaction_db")
 ///     .tempdir()

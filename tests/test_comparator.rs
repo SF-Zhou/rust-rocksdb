@@ -1,6 +1,6 @@
 mod util;
 
-use rocksdb::{CompactOptions, Options, ReadOptions, DB};
+use sfzhou_rocksdb::{CompactOptions, Options, ReadOptions, DB};
 use std::cmp::Ordering;
 use std::iter::FromIterator;
 use util::{U64Comparator, U64Timestamp};

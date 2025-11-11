@@ -16,13 +16,13 @@ mod util;
 
 use pretty_assertions::assert_eq;
 
-use rocksdb::{perf, Options, TransactionDB, TransactionDBOptions};
+use sfzhou_rocksdb::{perf, Options, TransactionDB, TransactionDBOptions};
 use util::DBPath;
 
 #[cfg(not(feature = "multi-threaded-cf"))]
-type DefaultThreadMode = rocksdb::SingleThreaded;
+type DefaultThreadMode = sfzhou_rocksdb::SingleThreaded;
 #[cfg(feature = "multi-threaded-cf")]
-type DefaultThreadMode = rocksdb::MultiThreaded;
+type DefaultThreadMode = sfzhou_rocksdb::MultiThreaded;
 
 #[test]
 fn test_transaction_db_memory_usage() {
@@ -33,8 +33,8 @@ fn test_transaction_db_memory_usage() {
         options.enable_statistics();
 
         // setup cache:
-        let cache = rocksdb::Cache::new_lru_cache(1 << 20); // 1 MB cache
-        let mut block_based_options = rocksdb::BlockBasedOptions::default();
+        let cache = sfzhou_rocksdb::Cache::new_lru_cache(1 << 20); // 1 MB cache
+        let mut block_based_options = sfzhou_rocksdb::BlockBasedOptions::default();
         block_based_options.set_block_cache(&cache);
         options.set_block_based_table_factory(&block_based_options);
 

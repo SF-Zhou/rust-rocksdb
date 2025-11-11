@@ -16,7 +16,7 @@ mod util;
 
 use pretty_assertions::assert_eq;
 
-use rocksdb::{Error, Options, ReadOptions, SstFileWriter, DB};
+use sfzhou_rocksdb::{Error, Options, ReadOptions, SstFileWriter, DB};
 use util::{DBPath, U64Comparator, U64Timestamp};
 
 #[test]

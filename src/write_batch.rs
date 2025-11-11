@@ -26,7 +26,7 @@ pub type WriteBatch = WriteBatchWithTransaction<false>;
 /// Making an atomic commit of several writes:
 ///
 /// ```
-/// use rocksdb::{DB, Options, WriteBatchWithTransaction};
+/// use sfzhou_rocksdb::{DB, Options, WriteBatchWithTransaction};
 ///
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_rocksdb_storage1")

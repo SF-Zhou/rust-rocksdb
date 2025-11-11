@@ -15,8 +15,8 @@
 mod util;
 
 use pretty_assertions::assert_eq;
-use rocksdb::{merge_operator::MergeFn, DBCompactionStyle, MergeOperands, Options, DB};
 use serde::{Deserialize, Serialize};
+use sfzhou_rocksdb::{merge_operator::MergeFn, DBCompactionStyle, MergeOperands, Options, DB};
 use util::DBPath;
 
 fn test_provided_merge(

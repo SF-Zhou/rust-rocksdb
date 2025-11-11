@@ -1,4 +1,4 @@
-use rocksdb::{IteratorMode, DB};
+use sfzhou_rocksdb::{IteratorMode, DB};
 
 fn main() {
     let _iter = {

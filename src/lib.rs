@@ -18,7 +18,7 @@
 //! # Examples
 //!
 //! ```
-//! use rocksdb::{DB, Options};
+//! use sfzhou_rocksdb::{DB, Options};
 //! // NB: db is automatically closed at end of lifetime
 //! let tempdir = tempfile::Builder::new()
 //!     .prefix("_path_for_rocksdb_storage")
@@ -41,7 +41,7 @@
 //! Opening a database and a single column family with custom options:
 //!
 //! ```
-//! use rocksdb::{DB, ColumnFamilyDescriptor, Options};
+//! use sfzhou_rocksdb::{DB, ColumnFamilyDescriptor, Options};
 //!
 //! let tempdir = tempfile::Builder::new()
 //!     .prefix("_path_for_rocksdb_storage_with_cfs")
@@ -144,7 +144,7 @@ pub use crate::{
     write_batch::{WriteBatch, WriteBatchIterator, WriteBatchWithTransaction},
 };
 
-use librocksdb_sys as ffi;
+use sfzhou_librocksdb_sys as ffi;
 
 use std::error;
 use std::fmt;

@@ -490,8 +490,8 @@
 ### Breaking changes
 
 * No more Writable trait, as WriteBatch is not thread-safe as a DB (spacejam)
-* All imports of `rocksdb::rocksdb::*` should now be simply `rocksdb::*` (alexreg)
-* All errors changed to use a new `rocksdb::Error` type (kaedroho, alexreg)
+* All imports of `sfzhou_rocksdb::sfzhou_rocksdb::*` should now be simply `sfzhou_rocksdb::*` (alexreg)
+* All errors changed to use a new `sfzhou_rocksdb::Error` type (kaedroho, alexreg)
 * Removed `Options.set_filter_deletes` as it was removed in RocksDB (kaedroho)
 * Renamed `add_merge_operator` to `set_merge_operator` and `add_comparator` to `set_comparator` (kaedroho)
 

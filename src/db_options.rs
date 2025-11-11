@@ -261,8 +261,8 @@ impl BlockBasedOptionsMustOutliveDB {
 /// # Examples
 ///
 /// ```
-/// use rocksdb::{Options, DB};
-/// use rocksdb::DBCompactionStyle;
+/// use sfzhou_rocksdb::{Options, DB};
+/// use sfzhou_rocksdb::DBCompactionStyle;
 ///
 /// fn badly_tuned_for_somebody_elses_disk() -> DB {
 ///    let path = "path/for/rocksdb/storageX";
@@ -297,7 +297,7 @@ pub struct Options {
 /// Making an unsafe write of a batch:
 ///
 /// ```
-/// use rocksdb::{DB, Options, WriteBatch, WriteOptions};
+/// use sfzhou_rocksdb::{DB, Options, WriteBatch, WriteOptions};
 ///
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_rocksdb_storageY1")
@@ -334,7 +334,7 @@ pub struct LruCacheOptions {
 /// Manually flushing the memtable:
 ///
 /// ```
-/// use rocksdb::{DB, Options, FlushOptions};
+/// use sfzhou_rocksdb::{DB, Options, FlushOptions};
 ///
 /// let tempdir = tempfile::Builder::new()
 ///     .prefix("_path_for_rocksdb_storageY2")
@@ -385,7 +385,7 @@ pub struct CuckooTableOptions {
 /// Move files instead of copying them:
 ///
 /// ```
-/// use rocksdb::{DB, IngestExternalFileOptions, SstFileWriter, Options};
+/// use sfzhou_rocksdb::{DB, IngestExternalFileOptions, SstFileWriter, Options};
 ///
 /// let writer_opts = Options::default();
 /// let mut writer = SstFileWriter::create(&writer_opts);
@@ -580,7 +580,7 @@ impl BlockBasedOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::BlockBasedOptions;
+    /// use sfzhou_rocksdb::BlockBasedOptions;
     ///
     /// let mut opts = BlockBasedOptions::default();
     /// opts.set_bloom_filter(10.0, true);
@@ -606,7 +606,7 @@ impl BlockBasedOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::BlockBasedOptions;
+    /// use sfzhou_rocksdb::BlockBasedOptions;
     ///
     /// let mut opts = BlockBasedOptions::default();
     /// opts.set_ribbon_filter(10.0);
@@ -628,7 +628,7 @@ impl BlockBasedOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::BlockBasedOptions;
+    /// use sfzhou_rocksdb::BlockBasedOptions;
     ///
     /// let mut opts = BlockBasedOptions::default();
     /// opts.set_hybrid_ribbon_filter(10.0, 2);
@@ -664,7 +664,7 @@ impl BlockBasedOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{BlockBasedOptions, BlockBasedIndexType, Options};
+    /// use sfzhou_rocksdb::{BlockBasedOptions, BlockBasedIndexType, Options};
     ///
     /// let mut opts = Options::default();
     /// let mut block_opts = BlockBasedOptions::default();
@@ -756,7 +756,7 @@ impl BlockBasedOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{BlockBasedOptions, DataBlockIndexType, Options};
+    /// use sfzhou_rocksdb::{BlockBasedOptions, DataBlockIndexType, Options};
     ///
     /// let mut opts = Options::default();
     /// let mut block_opts = BlockBasedOptions::default();
@@ -811,7 +811,7 @@ impl BlockBasedOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::BlockBasedOptions;
+    /// use sfzhou_rocksdb::BlockBasedOptions;
     ///
     /// let mut opts = BlockBasedOptions::default();
     /// opts.set_bloom_filter(10.0, true);
@@ -1009,7 +1009,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.increase_parallelism(3);
@@ -1077,7 +1077,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.create_if_missing(true);
@@ -1099,7 +1099,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.create_missing_column_families(true);
@@ -1194,7 +1194,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompressionType};
+    /// use sfzhou_rocksdb::{Options, DBCompressionType};
     ///
     /// let mut opts = Options::default();
     /// opts.set_compression_type(DBCompressionType::Snappy);
@@ -1217,7 +1217,7 @@ impl Options {
     /// Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompressionType};
+    /// use sfzhou_rocksdb::{Options, DBCompressionType};
     ///
     /// let mut opts = Options::default();
     /// opts.set_compression_type(DBCompressionType::Zstd);
@@ -1238,7 +1238,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompressionType};
+    /// use sfzhou_rocksdb::{Options, DBCompressionType};
     ///
     /// let mut opts = Options::default();
     /// opts.set_wal_compression_type(DBCompressionType::Zstd);
@@ -1266,7 +1266,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompressionType};
+    /// use sfzhou_rocksdb::{Options, DBCompressionType};
     ///
     /// let mut opts = Options::default();
     /// opts.set_bottommost_compression_type(DBCompressionType::Zstd);
@@ -1289,7 +1289,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompressionType};
+    /// use sfzhou_rocksdb::{Options, DBCompressionType};
     ///
     /// let mut opts = Options::default();
     /// opts.set_compression_per_level(&[
@@ -1331,7 +1331,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_compression_options(4, 5, 6, 7);
@@ -1362,7 +1362,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompressionType};
+    /// use sfzhou_rocksdb::{Options, DBCompressionType};
     ///
     /// let mut opts = Options::default();
     /// opts.set_bottommost_compression_type(DBCompressionType::Zstd);
@@ -1688,7 +1688,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_optimize_filters_for_hits(true);
@@ -1737,7 +1737,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_max_open_files(10);
@@ -1771,7 +1771,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_use_fsync(true);
@@ -1805,7 +1805,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, LogLevel};
+    /// use sfzhou_rocksdb::{Options, LogLevel};
     ///
     /// let mut opts = Options::default();
     /// opts.set_log_level(LogLevel::Warn);
@@ -1833,7 +1833,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_bytes_per_sync(1024 * 1024);
@@ -1883,7 +1883,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_allow_concurrent_memtable_write(false);
@@ -1937,7 +1937,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_use_direct_reads(true);
@@ -1961,7 +1961,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_use_direct_io_for_flush_and_compaction(true);
@@ -1972,6 +1972,12 @@ impl Options {
                 self.inner,
                 c_uchar::from(enabled),
             );
+        }
+    }
+
+    pub fn set_use_direct_io_for_wal(&mut self, enabled: bool) {
+        unsafe {
+            ffi::rocksdb_options_set_use_direct_io_for_wal(self.inner, c_uchar::from(enabled));
         }
     }
 
@@ -2006,7 +2012,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// #[allow(deprecated)]
@@ -2028,7 +2034,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_table_cache_num_shard_bits(4);
@@ -2062,7 +2068,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_min_write_buffer_number(2);
@@ -2086,7 +2092,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_max_write_buffer_number(4);
@@ -2117,7 +2123,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_write_buffer_size(128 * 1024 * 1024);
@@ -2142,7 +2148,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_db_write_buffer_size(128 * 1024 * 1024);
@@ -2169,7 +2175,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_max_bytes_for_level_base(512 * 1024 * 1024);
@@ -2185,7 +2191,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_max_bytes_for_level_multiplier(4.0);
@@ -2203,7 +2209,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_max_manifest_file_size(20 * 1024 * 1024);
@@ -2230,7 +2236,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_target_file_size_base(128 * 1024 * 1024);
@@ -2254,7 +2260,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_min_write_buffer_number_to_merge(2);
@@ -2275,7 +2281,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_level_zero_file_num_compaction_trigger(8);
@@ -2298,7 +2304,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, CompactionPri};
+    /// use sfzhou_rocksdb::{Options, CompactionPri};
     ///
     /// let mut opts = Options::default();
     /// opts.set_compaction_pri(CompactionPri::MinOverlappingRatio);
@@ -2320,7 +2326,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_level_zero_slowdown_writes_trigger(10);
@@ -2340,7 +2346,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_level_zero_stop_writes_trigger(48);
@@ -2358,7 +2364,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBCompactionStyle};
+    /// use sfzhou_rocksdb::{Options, DBCompactionStyle};
     ///
     /// let mut opts = Options::default();
     /// opts.set_compaction_style(DBCompactionStyle::Universal);
@@ -2452,7 +2458,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// #[allow(deprecated)]
@@ -2488,7 +2494,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// #[allow(deprecated)]
@@ -2514,7 +2520,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_disable_auto_compactions(true);
@@ -2694,7 +2700,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, MemtableFactory};
+    /// use sfzhou_rocksdb::{Options, MemtableFactory};
     /// let mut opts = Options::default();
     /// let factory = MemtableFactory::HashSkipList {
     ///     bucket_count: 1_000_000,
@@ -2743,7 +2749,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, CuckooTableOptions};
+    /// use sfzhou_rocksdb::{Options, CuckooTableOptions};
     ///
     /// let mut opts = Options::default();
     /// let mut factory_opts = CuckooTableOptions::default();
@@ -2772,7 +2778,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{KeyEncodingType, Options, PlainTableFactoryOptions};
+    /// use sfzhou_rocksdb::{KeyEncodingType, Options, PlainTableFactoryOptions};
     ///
     /// let mut opts = Options::default();
     /// let factory_opts = PlainTableFactoryOptions {
@@ -2818,7 +2824,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_report_bg_io_stats(true);
@@ -2838,7 +2844,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// // Set max total wal size to 1G.
@@ -2857,7 +2863,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, DBRecoveryMode};
+    /// use sfzhou_rocksdb::{Options, DBRecoveryMode};
     ///
     /// let mut opts = Options::default();
     /// opts.set_wal_recovery_mode(DBRecoveryMode::AbsoluteConsistency);
@@ -2919,7 +2925,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_stats_dump_period_sec(300);
@@ -2937,7 +2943,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_stats_persist_period_sec(5);
@@ -2988,7 +2994,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::{Options, SliceTransform};
+    /// use sfzhou_rocksdb::{Options, SliceTransform};
     ///
     /// let mut opts = Options::default();
     /// let transform = SliceTransform::create_fixed_prefix(10);
@@ -3022,7 +3028,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut opts = Options::default();
     /// opts.set_wal_dir("/path/to/dir");
@@ -3097,7 +3103,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_keep_log_file_num(100);
@@ -3115,7 +3121,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_allow_mmap_writes(true);
@@ -3133,7 +3139,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_allow_mmap_reads(true);
@@ -3153,7 +3159,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_manual_wal_flush(true);
@@ -3176,7 +3182,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_atomic_flush(true);
@@ -3207,7 +3213,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_ratelimiter(1024 * 1024, 100 * 1000, 10);
@@ -3259,7 +3265,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_max_log_file_size(0);
@@ -3294,7 +3300,7 @@ impl Options {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::Options;
+    /// use sfzhou_rocksdb::Options;
     ///
     /// let mut options = Options::default();
     /// options.set_recycle_log_file_num(5);
@@ -3615,7 +3621,7 @@ impl FlushOptions {
     /// # Examples
     ///
     /// ```
-    /// use rocksdb::FlushOptions;
+    /// use sfzhou_rocksdb::FlushOptions;
     ///
     /// let mut options = FlushOptions::default();
     /// options.set_wait(false);
@@ -3846,7 +3852,7 @@ impl ReadOptions {
     /// supported.  For example:
     ///
     /// ```
-    /// let mut options = rocksdb::ReadOptions::default();
+    /// let mut options = sfzhou_rocksdb::ReadOptions::default();
     /// options.set_iterate_range("xy".as_bytes().."xz".as_bytes());
     /// ```
     ///
@@ -3855,8 +3861,8 @@ impl ReadOptions {
     /// equivalent to:
     ///
     /// ```
-    /// let mut options = rocksdb::ReadOptions::default();
-    /// options.set_iterate_range(rocksdb::PrefixRange("xy".as_bytes()));
+    /// let mut options = sfzhou_rocksdb::ReadOptions::default();
+    /// options.set_iterate_range(sfzhou_rocksdb::PrefixRange("xy".as_bytes()));
     /// ```
     ///
     /// Note that setting range using this method is separate to using prefix
@@ -3868,7 +3874,7 @@ impl ReadOptions {
     /// bounds can be reset by setting the range to `..` as in:
     ///
     /// ```
-    /// let mut options = rocksdb::ReadOptions::default();
+    /// let mut options = sfzhou_rocksdb::ReadOptions::default();
     /// options.set_iterate_range(..);
     /// ```
     pub fn set_iterate_range(&mut self, range: impl crate::IterateBounds) {
@@ -3994,7 +4000,7 @@ impl ReadOptions {
     /// Default: 0
     ///
     /// ```
-    /// use rocksdb::{ReadOptions};
+    /// use sfzhou_rocksdb::{ReadOptions};
     ///
     /// let mut opts = ReadOptions::default();
     /// opts.set_readahead_size(4_194_304); // 4mb
